@@ -95,11 +95,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /get-menu/17:
+  /get-menu/{menuId}:
     get:
       tags:
         - Menu
       summary: Get-Menu:ID
+      parameters:
+        - name: menuId
+          in: path
+          required: true
+          schema:
+            type: integer
       security:
         - bearerAuth: []
       responses:
@@ -129,11 +135,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /update-menu/17:
+  /update-menu/{menuId}:
     put:
       tags:
         - Menu
       summary: Update-Menu
+      parameters:
+        - name: menuId
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         content:
           application/json:
@@ -151,11 +163,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /delete-menu/30:
+  /delete-menu/{menuId}:
     delete:
       tags:
         - Menu
       summary: Delete-Menu
+      parameters:
+        - name: menuId
+          in: path
+          required: true
+          schema:
+            type: integer
       security:
         - bearerAuth: []
       responses:
@@ -173,11 +191,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /get-category/1:
+  /get-category/{categoryId}:
     get:
       tags:
         - Categories
       summary: Get-Category:ID
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         "200":
           description: Successful response
@@ -202,11 +226,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /update-category/8:
+  /update-category/{categoryId}:
     put:
       tags:
         - Categories
       summary: Update-Category
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         content:
           application/json:
@@ -221,11 +251,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /delete-category/8:
+  /delete-category/{categoryId}:
     delete:
       tags:
         - Categories
       summary: Delete-Category
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: integer
       security:
         - bearerAuth: []
       responses:
@@ -243,31 +279,49 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /get-product/1:
+  /get-product/{productId}:
     get:
       tags:
         - Product
       summary: Get-Product:ID
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         "200":
           description: Successful response
           content:
             application/json: {}
-  /product-seller/2:
+  /product-seller/{sellerId}:
     get:
       tags:
         - Product
       summary: Get-Seller:ID (User)
+      parameters:
+        - name: sellerId
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         "200":
           description: Successful response
           content:
             application/json: {}
-  /delete-product/12:
+  /delete-product/{productId}:
     delete:
       tags:
         - Product
       summary: Delete-Product
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
       security:
         - bearerAuth: []
       responses:
@@ -287,11 +341,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /profile/2:
+  /profile/{userId}:
     get:
       tags:
         - Users
       summary: Get-User:ID
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
       security:
         - bearerAuth: []
       responses:
@@ -299,11 +359,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /update-profile/45:
+  /update-profile/{userId}:
     put:
       tags:
         - Users
       summary: Update-Profile
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         content:
           application/json:
@@ -356,41 +422,65 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /regencies/35:
+  /regencies/{provinceId}:
     get:
       tags:
         - Addresses
       summary: Regencies
+      parameters:
+        - name: provinceId
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         "200":
           description: Successful response
           content:
             application/json: {}
-  /districts/3508:
+  /districts/{regencyId}:
     get:
       tags:
         - Addresses
       summary: Districts
+      parameters:
+        - name: regencyId
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         "200":
           description: Successful response
           content:
             application/json: {}
-  /villages/3508130:
+  /villages/{districtId}:
     get:
       tags:
         - Addresses
       summary: Villages
+      parameters:
+        - name: districtId
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         "200":
           description: Successful response
           content:
             application/json: {}
-  /address/2:
+  /address/{userId}:
     get:
       tags:
         - Addresses
       summary: Get-Address:ID (User)
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
       security:
         - bearerAuth: []
       responses:
@@ -422,11 +512,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /main-address/13:
+  /main-address/{addressId}:
     put:
       tags:
         - Addresses
       summary: Main-Address:ID
+      parameters:
+        - name: addressId
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         content:
           application/json:
@@ -442,11 +538,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /delete-address/14:
+  /delete-address/{addressId}:
     delete:
       tags:
         - Addresses
       summary: Delete-Address
+      parameters:
+        - name: addressId
+          in: path
+          required: true
+          schema:
+            type: integer
       security:
         - bearerAuth: []
       responses:
